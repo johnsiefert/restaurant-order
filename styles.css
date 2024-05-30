@@ -1,3 +1,156 @@
 body {
-    margin: 0;
+  margin: 0;
+  font-family: 'Smythe', system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
+
+header {
+  background-image: url('./burger.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  width: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 100px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px 11px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+  margin: 0 20px 5px 20px;
+  border-radius: 5px;
+}
+
+.card-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-emoji {
+  width: 48px;
+  border-radius: 5px;
+}
+
+.card-mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-left: 16px;
+}
+
+.card:hover {
+  box-shadow: 0 0px 15px rgba(255, 255, 255, 0.8);
+}
+
+h4.card-title {
+  font-size: 26px;
+  margin: 0 0 3px 0;
+}
+
+.card-ingredients {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-menu {
+  font-size: 21px;
+  color: #888888;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.card-menu:hover {
+  color: black;
+}
+
+/* modal */
+
+.modal {
+  display: none;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 420px;
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: #212529;
+  color: whitesmoke;
+}
+
+.modal-inner {
+  width: 290px;
+  margin: 0 auto;
+}
+
+.modal-inner-loading {
+  text-align: center;
+}
+
+/* modal buttons */
+
+.close-modal-btn-container {
+  text-align: right;
+  margin: 9px;
+}
+
+.modal-close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: whitesmoke;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:active {
+  color: red;
+  cursor: pointer;
+}
+
+.modal-close-btn:disabled {
+  color: whitesmoke;
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+.modal-choice-btns {
+  margin-top: 10px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-btn {
+  padding: 10px 24px;
+  cursor: pointer;
 }

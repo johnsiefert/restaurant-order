@@ -1,24 +1,26 @@
-const menuArray = [
-  {
-    name: 'Pizza',
-    ingredients: ['pepperoni', 'mushrom', 'mozarella'],
-    id: 0,
-    price: 14,
-    emoji: '🍕',
-  },
-  {
-    name: 'Hamburger',
-    ingredients: ['beef', 'cheese', 'lettuce'],
-    price: 12,
-    emoji: '🍔',
-    id: 1,
-  },
-  {
-    name: 'Beer',
-    ingredients: ['grain, hops, yeast, water'],
-    price: 12,
-    emoji: '🍺',
-    id: 2,
-  },
-];
-export default menuArray
+import { menuArray } from '/data.js';
+
+function menu(){
+const foodChoices = menuArray
+  .map(function (food) {
+    return `
+    <section class="card">
+        <div class="card-start">
+            <p class="card-emoji">${food.emoji}</p>
+        </div>
+            <div class="card-mid">
+                <h4 class="card-title">${food.name}</h4>
+                <p class="card-ingredients">${food.ingredients}</p>
+            </div>
+        <div class="card-end">
+            <button class="card-menu">+</button>
+        </div>
+    </section>
+    `;
+  })
+  .join('');
+
+  document.getElementById('container').innerHTML = foodChoices;
+}
+
+menu()
