@@ -51,7 +51,7 @@ header h1 {
 }
 
 .card-emoji {
-  width: 48px;
+  width: 38px;
   border-radius: 5px;
 }
 
@@ -72,7 +72,11 @@ h4.card-title {
   margin: 0 0 3px 0;
 }
 
-.card-ingredients {
+.card-price {
+    padding: 5px 0;
+}
+
+.card-ingredients,.card-price {
   font-size: 16px;
   margin: 0;
 }
@@ -89,68 +93,11 @@ h4.card-title {
   color: black;
 }
 
-/* modal */
-
-.modal {
-  display: none;
-  position: fixed;
-  right: 0;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  height: 420px;
-  width: 350px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 6px 2px #666;
-  background-color: #212529;
-  color: whitesmoke;
+.food-container {
+    display: flex;
 }
 
-.modal-inner {
-  width: 290px;
-  margin: 0 auto;
-}
-
-.modal-inner-loading {
-  text-align: center;
-}
-
-/* modal buttons */
-
-.close-modal-btn-container {
-  text-align: right;
-  margin: 9px;
-}
-
-.modal-close-btn {
-  font-size: 22px;
-  font-weight: bold;
-  background-color: transparent;
-  border: 1px solid transparent;
-  color: whitesmoke;
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:active {
-  color: red;
-  cursor: pointer;
-}
-
-.modal-close-btn:disabled {
-  color: whitesmoke;
-  opacity: 0.2;
-  cursor: not-allowed;
-}
-
-.modal-choice-btns {
-  margin-top: 10px;
-  padding: 8px 16px;
-  display: flex;
-  justify-content: center;
-}
-
-.modal-btn {
-  padding: 10px 24px;
-  cursor: pointer;
+.check-out-hidden {
+    display: block;
+    text-align: center;
 }
