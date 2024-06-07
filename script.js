@@ -1,6 +1,7 @@
 import { menuArray } from '/data.js';
 
-document.addEventListener('click', function () {});
+
+let currentOrder = {};
 
 function getFoodHtml(menuArray) {
   let foodHtml = ``;
@@ -27,36 +28,64 @@ function getFoodHtml(menuArray) {
 }
 
 function handleOrderClick(menuArray) {
+
   let orderDetails = document.querySelector('#order-details');
 
   if (!orderDetails) {
     orderDetails = document.createElement('div');
     orderDetails.id = 'order-details';
     orderDetails.innerHTML = `
-      <div>
+     <div>
         <h3>Your Order</h3>
         <ul id="order-list"></ul>
+        <p id="order-sum">Total: $0</p>
         <button id="complete-order">Complete Order</button>
       </div>
     `;
-     orderDetails.style.display = 'none';
+    orderDetails.style.display = 'none';
     document.querySelector('#order-total').appendChild(orderDetails);
   }
 
-  const orderList = orderDetails.querySelector('#order-list');
 
-  menuArray.forEach((food,index) => {
+  menuArray.forEach((food) => {
     const button = document.querySelector(`.food-item-${food.id}`);
     button.addEventListener('click', function () {
-        if(index === 0){
-            orderDetails.style.display = 'block'
-        }
-      const listItem = document.createElement('li');
-      listItem.textContent = `${food.name} - $${food.price}`;
-      orderList.appendChild(listItem);
+      if (orderDetails.style.display === 'none') {
+        orderDetails.style.display = 'block';
+      }
+
+      // Update current order
+      if (currentOrder[food.name]) {
+        currentOrder[food.name].count += 1;
+        currentOrder[food.name].total += food.price;
+      } else {
+        currentOrder[food.name] = { count: 1, total: food.price };
+      }
+
+      totalOrder();
     });
   });
 }
+
+
+function totalOrder() {
+     const orderList = document.getElementById('order-list');
+  orderList.innerHTML = '';
+ let totalSum = 0
+  Object.keys(currentOrder).forEach((item) => {
+    const listItem = document.createElement('li');
+    const orderItem = currentOrder[item];
+    listItem.textContent = `${item} - $${orderItem.total} (${
+      orderItem.count
+    }x $${orderItem.total / orderItem.count})`;
+    totalSum += orderItem.total
+    orderList.appendChild(listItem);
+  });
+
+  const orderSum = document.querySelector("#order-sum")
+  orderSum.textContent = `Total: $${totalSum}`
+}
+
 
 function renderFood(foodItems) {
   document.querySelector('#container').innerHTML = getFoodHtml(foodItems);
