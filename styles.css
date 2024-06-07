@@ -73,10 +73,11 @@ h4.card-title {
 }
 
 .card-price {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
-.card-ingredients,.card-price {
+.card-ingredients,
+.card-price {
   font-size: 16px;
   margin: 0;
 }
@@ -94,10 +95,42 @@ h4.card-title {
 }
 
 .food-container {
-    display: flex;
+  display: flex;
 }
 
-.check-out-hidden {
-    display: block;
-    text-align: center;
+#order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.order-title {
+  font-size: 32px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+#complete-order {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #16db99;
+  color: whitesmoke;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 16px;
 }

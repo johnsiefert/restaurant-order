@@ -35,14 +35,14 @@ function handleOrderClick(menuArray) {
     orderDetails = document.createElement('div');
     orderDetails.id = 'order-details';
     orderDetails.innerHTML = `
-     <div>
-        <h3>Your Order</h3>
+     <div id = "order">
+        <h3 class="order-title">Your Order</h3>
         <ul id="order-list"></ul>
         <p id="order-sum">Total: $0</p>
         <button id="complete-order">Complete Order</button>
       </div>
     `;
-    orderDetails.style.display = 'none';
+    // orderDetails.style.display = 'none';
     document.querySelector('#order-total').appendChild(orderDetails);
   }
 
