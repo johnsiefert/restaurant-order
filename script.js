@@ -42,7 +42,7 @@ function handleOrderClick(menuArray) {
         <button id="complete-order">Complete Order</button>
       </div>
     `;
-    // orderDetails.style.display = 'none';
+    orderDetails.style.display = 'none';
     document.querySelector('#order-total').appendChild(orderDetails);
   }
 
